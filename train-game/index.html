@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Endless Rails — 3D Train Runner</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <canvas id="game-canvas"></canvas>
+
+  <!-- HUD -->
+  <div id="hud">
+    <div id="hud-distance">0 m</div>
+    <div id="hud-coins">🪙 0</div>
+    <div id="hud-speed">0 km/h</div>
+  </div>
+
+  <!-- Touch controls (mobile) -->
+  <div id="touch-controls">
+    <button id="btn-left" aria-label="Move left">◀</button>
+    <button id="btn-right" aria-label="Move right">▶</button>
+  </div>
+
+  <!-- Start screen -->
+  <div id="start-screen" class="overlay">
+    <div class="panel">
+      <h1>🚂 Endless Rails</h1>
+      <p>Drive your train through an infinite world of forests and villages.</p>
+      <p class="controls-help">
+        <strong>Controls:</strong><br/>
+        ← / A — switch left &nbsp;&nbsp; → / D — switch right<br/>
+        Avoid logs &amp; barrels, collect coins!
+      </p>
+      <button id="btn-start" class="btn-primary">Start Game</button>
+    </div>
+  </div>
+
+  <!-- Game over screen -->
+  <div id="gameover-screen" class="overlay hidden">
+    <div class="panel">
+      <h1>💥 Crashed!</h1>
+      <p id="final-stats"></p>
+      <button id="btn-restart" class="btn-primary">Ride Again</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/world.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
